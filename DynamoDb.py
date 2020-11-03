@@ -1,50 +1,24 @@
-
 import boto3
 
-
-__TableName__ = "People"
-Primary_Column_Name = 'Sr'
-Primary_Key = 1
+TableName = "People"
 columns=["Age","First", "Last"]
-
 
 client = boto3.client('dynamodb')
 
-DB =     boto3.resource('dynamodb')
-table = DB.Table(__TableName__)
+DB = boto3.resource('dynamodb')
+table = DB.Table(TableName)
 
+PrimaryColumn = 'Sr'
+PrimaryKey = 1
+response = table.get_item(Key={PrimaryColumn:PrimaryKey})
 
-response = table.get_item(
-            Key={
-                Primary_Column_Name:Primary_Key
-            }
-        )
+PrimaryKey = 5
+response = table.put_item(Item={PrimaryColumn:PrimaryKey,  columns[0]: 44, columns[1] :"Youtube",  columns[2]: "Python" })
 
-response["Item"]
+PrimaryKey = 5 
+response = table.delete_item( Key={ PrimaryColumn: PrimaryKey } ) 
 
-
-Primary_Key = 5
-
-response = table.put_item(
-    Item={
-        Primary_Column_Name:Primary_Key,
-        columns[0]: 44,
-        columns[1] :"Youtube",
-        columns[2]: "Python"
-            }
-        )
-
-response["ResponseMetadata"]["HTTPStatusCode"]
-
-
-Primary_Key = 5 response = table.delete_item( Key={ Primary_Column_Name: Primary_Key } ) response
-
-Describe Method
-
-
-response = client.describe_table(TableName = __TableName__)
-response
-
+response = client.describe_table(TableName = TableName)
 
 
 from boto3.dynamodb.conditions import Key
