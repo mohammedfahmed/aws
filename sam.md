@@ -20,8 +20,6 @@ With the -u command the functions will be build with a docker similar to the AWS
 sam build -u
 ```
 
-Now we can also invoke the functions locally
-
 ## Local invoke
 ### Create event payload
 ```
@@ -75,22 +73,4 @@ Put it in a ZIP file, while in the layer/ folder with the python sub directory
 
 ```
 zip -r myname_layer.zip ./python/
-```
-
-## Custom policies
-### Add a custom policy to a Function, example with SSM
-```
-Policies:
-  - Statement:
-    - Sid: SSMDescribeParametersPolicy
-      Effect: Allow
-      Action:
-      - ssm:DescribeParameters
-      Resource: '*'
-    - Sid: SSMGetParameterPolicy
-      Effect: Allow
-      Action:
-      - ssm:GetParameters
-      - ssm:GetParameter
-      Resource: '*'
 ```
