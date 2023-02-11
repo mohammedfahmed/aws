@@ -1,4 +1,3 @@
-# Cheatsheet: aws SAM (serverless application model)
 ## How to ZIP your files for packaging and deploying
 If you want to ZIP the packages yourself, you can do the following commands
 
