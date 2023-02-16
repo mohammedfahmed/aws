@@ -1,19 +1,4 @@
-# AWS Data Analytics Services Cheat Sheet
-
-A last minute revison of some important data analytics services in AWS for quick preparation. As a part of this doc we will have info about the below mentioned services:
-
-### Table of Contents
-- [Kinesis Data Streams/ Data FireHose and Data Analytics](#Kinesis) 
-- [S3](#S3)
-- [DynamoDB](#DynamoDB)
-- [Lambda](#Lambda)
-- [Glue (Data Catalogue and ETL)](#Glue)
-- [EMR](#EMR)
-- [OpenSearch](#OpenSearch)
-- [RedShift](#RedShift)
-- [Athena](#Athena)
-- [Quicksight](#Quicksight)
-
+# AWS Data Analytics Services
 
 ## Kinesis
 
